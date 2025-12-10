@@ -1,0 +1,14 @@
+services:
+  - type: static
+    name: careview-frontend
+    buildCommand: npm run build
+    staticFiles:
+      rootDir: dist # 빌드된 결과물 폴더
+      headers:
+        - path: /*
+          headers:
+            - key: X-Frame-Options
+              value: DENY
+      rewrites:
+        - source: /*
+          destination: /index.html
