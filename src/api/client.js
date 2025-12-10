@@ -4,6 +4,8 @@ import axios from "axios";
 const rawBaseURL = import.meta.env.VITE_API_BASE_URL || "";
 export const API_BASE_URL = rawBaseURL.replace(/\/+$/, "");
 
+console.log("BASE_URL 설정 값:", API_BASE_URL);
+
 if (!API_BASE_URL) {
   console.warn(
     "VITE_API_BASE_URL가 설정되어 있지 않습니다. .env.development 파일을 확인해 주세요."
